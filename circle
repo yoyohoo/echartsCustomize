@@ -1,0 +1,24 @@
+ option = {
+    graphic: [
+         {
+            type: 'group',
+            left: 'center',
+            top: 100,
+            children: [
+                {
+                    type: 'circle',
+                    z: 100,
+                    left: 'center',
+                    top: 'middle',
+                    shape: {
+                        r: 50
+                    },
+                    style: {
+                        text: 'asd',
+                        color: '#eee',
+                        fill: '#ff9900'
+                    },
+                }]
+         }
+    ]
+};
