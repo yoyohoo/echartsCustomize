@@ -1,4 +1,4 @@
-option = {
+ option = {
    
     graphic: [
          {
@@ -32,4 +32,6 @@ option = {
                         shadowColor: 'rgba(0,0,0,0.3)'
                     }
                 }]
-  }
+         }
+    ]
+};
