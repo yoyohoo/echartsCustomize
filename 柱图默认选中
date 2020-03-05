@@ -1,0 +1,83 @@
+var data1 = [20,0,0],
+data2 = [10,13,15],
+width = 50;
+
+var option = {
+    color: ['#3398DB'],
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+            type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: [
+        {
+            type: 'value'
+        }
+    ],
+    yAxis: [
+        {
+            type: 'category',
+            data: ['1档', '2档', '3档'],
+            axisLabel: {
+                show: true
+            },
+            axisTick: {
+                alignWithLabel: true
+            }
+        }
+    ],
+    series: [
+           {
+            type: 'bar',
+            itemStyle: {
+                normal: {color: 'rgba(255,0,255,0.1)'},
+            },
+            // barGap:'-80%',
+            barGap: -.75,
+            shadowOffsetX: 10,
+            barCategoryGap:'120%',
+            barWidth: width*2 ,
+            data: data1,
+            animation: true
+        },
+        {
+            type: 'bar',
+            selectedMode :'multiple',
+            barWidth: width,
+            label: {
+                normal: {
+                    show: true
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            itemStyle: {
+                normal:{
+                    color: ""
+                },
+                emphasis:{
+                    barWidth: 50
+                }
+            },
+            data: data2
+        }
+    ]
+};
+
+myChart.setOption(option);
+
+myChart.on('click',function(params){
+   var data=[0,0,0];
+    data[params.dataIndex] = 20;
+        console.info(data)
+    option.series[0].data = data;
+    myChart.setOption(option);
+})
